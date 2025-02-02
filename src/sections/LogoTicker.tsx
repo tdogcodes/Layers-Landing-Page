@@ -6,6 +6,7 @@ import outsideLogo from "@/assets/images/outside.svg";
 import apexLogo from "@/assets/images/apex.svg";
 import celestialLogo from "@/assets/images/celestial.svg";
 import twiceLogo from "@/assets/images/twice.svg";
+import Image from "next/image";
 
 const logos = [
     { name: "Quantum", image: quantumLogo },
@@ -19,5 +20,17 @@ const logos = [
 ];
 
 export default function LogoTicker() {
-    return <div>Logo Ticker</div>;
+    return (<section className="lg:my-24 py-24 overflow-x-clip">
+            <div className="container">
+                <h3 className="text-center text-white/50 text-xl">Already choosen by these market leaders</h3>
+                <div className="overflow-hidden mt-12" style={{maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'}}>
+                    <div className="flex gap-24 pr-24">
+                        {logos.map(logo=>(
+                            <Image src={logo.image} key={logo.name} alt={logo.name}/>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+        );
 }
