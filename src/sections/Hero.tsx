@@ -19,11 +19,11 @@ export default function Hero() {
                 <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-300 text-neutral-950 
                 rounded-full font-semibold">✨ 7.5 Million seed round raised</div>
             </div>
-            <h1 className="text-6xl md:text-7xl font-medium text-center mt-6 lg:text-8xl">Impactful design</h1>
+            <h1 className="text-7xl md:text-8xl font-medium text-center mt-6">Impactful design</h1>
             <p className="text-center text-xl mt-8 text-white lg:max-w-lg mx-auto">design tools shouldn't slow you down, Layers combines
             powerful features with an intuitive interface that keeps you in your creative flow.</p>
             <form className="flex border border-white/15 rounded-full p-2 mt-8 justify-between m-auto bg-neutral-950 md:max-w-lg">
-                <input type="email" placeholder="Enter Your email" className="bg-transparent pl-4 focus:outline-none" />
+                <input type="email" placeholder="Enter Your email" className="bg-transparent pl-4 focus:outline-none w-full" />
                 <Button variant="primary" type="submit" className="whitespace-nowrap px-3 md:px-5" size="sm">Sign up</Button>
             </form>
         </div>
