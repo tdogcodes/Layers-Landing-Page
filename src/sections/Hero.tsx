@@ -5,7 +5,7 @@ import designExample2Image from '@/assets/images/design-example-2.png'
 import Pointer from "@/components/Pointer";
 
 export default function Hero() {
-    return <section className="py-24 overflow-x-clip">
+    return <section className="py-32 lg:pt-40 overflow-x-clip">
         <div className="container relative">
             <div className="absolute -left-32 top-16 -z-10 opacity-50 hidden lg:block">
                 <Image src={designExample1Image} alt="design example 1"/>
@@ -13,8 +13,8 @@ export default function Hero() {
             <div className="absolute -right-64 -top-16 -z-10 opacity-50 hidden lg:block">
                 <Image src={designExample2Image} alt="design example 2"/>
             </div>
-            <div className="absolute right-80 -top-16"><Pointer name="Brian" color="red"/></div>
-            <div className="absolute left-56 -bottom-10"><Pointer name="Andrea"/></div>
+            <div className="absolute right-80 -top-1 hidden lg:block"><Pointer name="Brian" color="red"/></div>
+            <div className="absolute left-56 -bottom-10 hidden lg:block"><Pointer name="Andrea"/></div>
             <div className="flex justify-center">
                 <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-300 text-neutral-950 
                 rounded-full font-semibold">✨ 7.5 Million seed round raised</div>
