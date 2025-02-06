@@ -7,6 +7,7 @@ import designExample2Image from '@/assets/images/design-example-2.png'
 import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import cursorYouImage from '@/assets/images/cursor-you.svg';
 
 export default function Hero() {
 
@@ -22,36 +23,40 @@ export default function Hero() {
         ]);
         leftPointerAnimate([
             [leftPointerScope.current, {opacity: 1},{duration: 0.5}],
-            [leftPointerScope.current, {y: 0, x: 0}, {duration: 0.5}]
+            [leftPointerScope.current, {y: 0, x: 0}, {duration: 0.5}],
+            [leftPointerScope.current, {y: [0,-80], x: [0,80]}, {duration: 0.5, ease: 'easeInOut'}]
         ]);
         rightDesignAnimate([
-            [rightDesignScope.current, {opacity: 1},{duration: 0.5}],
+            [rightDesignScope.current, {opacity: 1},{duration: 0.5,  delay: 1.5}],
             [rightDesignScope.current, {y: 0, x: 0}, {duration: 0.5}]
         ]);
         rightPointerAnimate([
-            [rightPointerScope.current, {opacity: 1},{duration: 0.5}],
-            [rightPointerScope.current, {y: 0, x: 0}, {duration: 0.5}]
+            [rightPointerScope.current, {opacity: 1},{duration: 0.5, delay: 1.5}],
+            [rightPointerScope.current, {y: 0, x: 0}, {duration: 0.5}],
+            [rightPointerScope.current, {y: [0,80], x: [0,-80]}, {duration: 0.5, ease: 'easeInOut'}]
         ]);
     },[]);
 
-    return <section className="py-32 lg:pt-40 overflow-x-clip">
+    return <section className="py-32 lg:pt-40 overflow-x-clip" style={ {cursor: `url(${cursorYouImage.src}), auto`}}>
         <div className="container relative">
-            <motion.div ref={leftDesignScope} initial={{opacity: 0, y: 100, x: -100}} className="absolute -left-32 top-16 -z-10 opacity-50 hidden lg:block">
-                <Image src={designExample1Image} alt="design example 1"/>
+            <motion.div ref={leftDesignScope} initial={{opacity: 0, y: 100, x: -100}} drag className="absolute -left-32 top-16 z-10 hidden lg:block">
+                <Image src={designExample1Image} alt="design example 1" draggable="false"/>
             </motion.div>
-            <motion.div ref={leftPointerScope} initial={{opacity: 0, y: 100, x: -100}} className="absolute left-30 -bottom-10 hidden lg:block">
+            <motion.div ref={leftPointerScope} initial={{opacity: 0, y: 100, x: -100}} drag className="absolute left-32 -bottom-10 z-10 hidden lg:block">
                 <Pointer name="Andrea"/>
             </motion.div>
-            <motion.div ref={rightDesignScope} initial={{opacity: 0, y: -100, x: 100}} className="absolute -right-64 -top-16 -z-10 opacity-50 hidden lg:block">
-                <Image src={designExample2Image} alt="design example 2"/>
+            <motion.div ref={rightDesignScope} initial={{opacity: 0, y: -100, x: 100}} drag className="absolute -right-64 -top-16 z-10 hidden lg:block">
+                <Image src={designExample2Image} alt="design example 2" draggable="false"/>
             </motion.div>
-            <motion.div ref={rightPointerScope} initial={{opacity: 0, y: -100, x: 100}} className="absolute right-12 top-10 hidden lg:block">
+            <motion.div ref={rightPointerScope} initial={{opacity: 0, y: -100, x: 100}} drag className="absolute right-32 top-10 z-10 hidden lg:block">
                 <Pointer name="Brian" color="red"/>
             </motion.div>
-            <div className="flex justify-center">
-                <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-300 text-neutral-950 
-                rounded-full font-semibold">✨ 7.5 Million seed round raised</div>
-            </div>
+            <motion.div drag>
+                <div className="flex justify-center">
+                    <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-300 text-neutral-950 
+                    rounded-full font-semibold">✨ 7.5 Million seed round raised</div>
+                </div>
+            </motion.div>
             <h1 className="text-7xl md:text-8xl font-medium text-center mt-6">Impactful design</h1>
             <p className="text-center text-xl mt-8 text-white lg:max-w-lg mx-auto">design tools shouldn't slow you down, Layers combines
             powerful features with an intuitive interface that keeps you in your creative flow.</p>
