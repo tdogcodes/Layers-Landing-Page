@@ -37,7 +37,7 @@ export default function Hero() {
         ]);
     },[]);
 
-    return <section className="py-32 lg:pt-40 overflow-x-clip" style={ {cursor: `url(${cursorYouImage.src}), auto`}}>
+    return <section className="py-32 lg:pt-40 overflow-x-clip" style={{cursor: `url(${cursorYouImage.src}), auto`}} id="home">
         <div className="container relative">
             <motion.div ref={leftDesignScope} initial={{opacity: 0, y: 100, x: -100}} drag className="absolute -left-32 top-16 z-10 hidden lg:block">
                 <Image src={designExample1Image} alt="design example 1" draggable="false"/>

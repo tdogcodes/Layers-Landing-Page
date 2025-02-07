@@ -7,11 +7,23 @@ import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-    { label: "Home", href: "#" },
+    { label: "Home", href: "#home"},
     { label: "Features", href: "#features" },
     { label: "Integrations", href: "#integrations" },
     { label: "FAQs", href: "#faqs" },
 ];
+
+const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+}
 
 export default function Navbar() {
 
@@ -27,7 +39,7 @@ export default function Navbar() {
                     <div className="lg:flex justify-center items-center hidden">
                         <nav className="flex gap-6 font-medium">
                             {navLinks.map((link)=>(
-                                <a href={link.href} key={link.label}>
+                                <a href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)} key={link.label}>
                                     {link.label}
                                 </a>
                             ))}
@@ -37,8 +49,12 @@ export default function Navbar() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
                         strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu md:hidden" onClick={()=>setOpen(!isOpen)}>
                         <line x1="3" y1="6" x2="21" y2="6" className={twMerge('origin-left transition', isOpen && 'rotate-45 -translate-y-1')}></line><line x1="3" y1="12" x2="21" y2="12" className={twMerge(isOpen && 'opacity-0')}></line><line x1="3" y1="18" x2="21" y2="18" className={twMerge('origin-left transition', isOpen && '-rotate-45 translate-y-1')}></line></svg>
-                        <Button variant="secondary" className="hidden md:inline-flex items-center">Log in</Button>
-                        <Button variant="primary" className="hidden md:inline-flex items-center">Log in</Button>
+                        <a href="https://layers.to/auth/login" target={"_blank" + "_self"} rel={"noopener noreferrer" + undefined}>
+                            <Button variant="secondary" className="hidden md:inline-flex items-center">Log in</Button>
+                        </a>
+                        <a href="https://layers.to/auth/join" target={"_blank" + "_self"} rel={"noopener noreferrer" + undefined}>
+                            <Button variant="primary" className="hidden md:inline-flex items-center">Sign up</Button>
+                        </a>
                     </div>
                 </div>
                 <AnimatePresence>
@@ -49,10 +65,14 @@ export default function Navbar() {
                     className="overflow-hidden">
                         <div className="flex flex-col items-center gap-4 py-4">
                             {navLinks.map(link => (
-                                <a href={link.href} key={link.label} className="">{link.label}</a>
+                                <a href={link.href} key={link.label} onClick={(e) => handleSmoothScroll(e, link.href)}>{link.label}</a>
                             ))}
-                        <Button variant="secondary">Log in</Button>
-                        <Button variant="primary">Sign up</Button>
+                        <a href="https://layers.to/auth/login" target={"_blank" + "_self"} rel={"noopener noreferrer" + undefined}>
+                            <Button variant="secondary" className="items-center">Log in</Button>
+                        </a>
+                        <a href="https://layers.to/auth/join" target={"_blank" + "_self"} rel={"noopener noreferrer" + undefined}>
+                            <Button variant="primary" className="items-center">Sign up</Button>
+                        </a>
                         </div>
                     </motion.div>}
                 </AnimatePresence>

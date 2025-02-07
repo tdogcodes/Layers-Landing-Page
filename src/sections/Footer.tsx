@@ -2,9 +2,9 @@ import Image from 'next/image';
 import logoImage from '@/assets/images/logo.svg'
 
 const footerLinks = [
-    { href: "#", label: "Contact" },
-    { href: "#", label: "Privacy Policy" },
-    { href: "#", label: "Terms & Conditions" },
+    { link: "https://layers.to/contact", label: "Contact" },
+    { link: "https://layers.to/legal/privacy-policy", label: "Privacy Policy" },
+    { link: "https://layers.to/legal/terms-and-conditions", label: "Terms & Conditions" },
 ];
 
 export default function Footer() {
@@ -17,7 +17,11 @@ export default function Footer() {
                 <div>
                     <nav className='flex gap-6'>
                         {footerLinks.map((link, i) =>(
-                            <a key={i} href={link.href} className='text-white/50 text-sm'>{link.label}</a>
+                            <a key={i} href={link.link} 
+                            className='text-white/50 text-sm'
+                            target={link.link.startsWith("http") ? "_blank" : "_self"}
+                            rel={link.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                            >{link.label}</a>
                         ))}
                     </nav>
                 </div>
