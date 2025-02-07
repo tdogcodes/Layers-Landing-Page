@@ -1,5 +1,4 @@
 import Tag from "@/components/Tag";
-import Image from "next/image";
 import figmaIcon from '@/assets/images/figma-logo.svg'
 import githubIcon from '@/assets/images/github-logo.svg'
 import notionLogo from '@/assets/images/notion-logo.svg'
