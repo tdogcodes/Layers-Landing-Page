@@ -9,7 +9,7 @@ export default function CallToAction() {
 
     useEffect(()=>{
         animation.current = animate(scope.current, { x: '-50%'}, { duration: 30, ease: "linear", repeat: Infinity })
-    }, []);
+    }, [scope, animate]);
 
     useEffect(() => {
         if (animation.current) {

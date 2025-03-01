@@ -32,7 +32,7 @@ export default function Introduction() {
                         <span key={wordIndex} className={twMerge((wordIndex < currentWord && 'text-white'))}>{`${word} `}</span>
                     ))}
                     </span>
-                    <span className="text-lime-400 block">That's why we built Layers.</span>
+                    <span className="text-lime-400 block">That&apos;s why we built Layers.</span>
                 </motion.div>
             </div>
             <div className="h-[100vh]" ref={scrollTarget}>
