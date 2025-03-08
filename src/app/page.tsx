@@ -9,15 +9,17 @@ import CallToAction from "@/sections/CallToAction";
 import Footer from "@/sections/Footer";
 
 export default function Home() {
-    return <>
-        <Navbar/>
-        <Hero/>
-        <LogoTicker/>
-        <Introduction/>
-        <Features/>
-        <Integrations/>
-        <Faqs/>
-        <CallToAction/>
-        <Footer/>
-    </>
+    return (
+        <>
+            <Navbar />
+            <Hero />
+            <LogoTicker />
+            <Introduction />
+            <Features />
+            <Integrations />
+            <Faqs />
+            <CallToAction />
+            <Footer />
+        </>
+    );
 }

@@ -28,7 +28,7 @@ export default function RootLayout({
                 href="/icon?<generated>"
                 type="image/<generated>"
                 sizes="<generated>"
-                />
+            />
             <body
                 className={`${inter.variable} font-sans antialiased bg-neutral-950 text-white`}
             >
