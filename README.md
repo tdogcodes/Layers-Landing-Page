@@ -1,4 +1,4 @@
-Landing Page for Graphic Design Site - Layers
+## Landing Page for Graphic Design Site - Layers
 
 Overview
 
