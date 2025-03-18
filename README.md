@@ -1,5 +1,7 @@
-##Landing Page for Graphic Design Site - Layers
+Landing Page for Graphic Design Site - Layers
+
 Overview
+
 A visually appealing landing page built with Next.js to showcase designers' latest work and mock-ups.
 
 Features
