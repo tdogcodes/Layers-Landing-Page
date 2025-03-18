@@ -9,7 +9,7 @@ Features
 - Smooth Animations – Integrated Framer Motion for dynamic UI effects.
 - Typed Components – Used TypeScript for type safety and maintainability.
 
-Tech Stack
+Tech Stack -
 Next.js, TypeScript, Tailwind CSS, CVA, Framer Motion
 
 Setup
