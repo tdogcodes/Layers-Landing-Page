@@ -44,6 +44,7 @@ export default function Faqs() {
                 <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
                     {faqs.map((faq, faqIndex) => (
                         <div
+                            aria-label={faq.question}
                             key={faq.question}
                             className="bg-neutral-900 rounded-2xl border border-white/10 p-6"
                         >

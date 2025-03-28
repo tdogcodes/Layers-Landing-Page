@@ -63,6 +63,7 @@ export default function Hero() {
 
     return (
         <section
+            aria-label="hero"
             className="py-32 lg:pt-40 overflow-x-clip"
             style={{ cursor: `url(${cursorYouImage.src}), auto` }}
             id="home"
@@ -127,12 +128,15 @@ export default function Hero() {
                     in your creative flow.
                 </p>
                 <form className="flex border border-white/15 rounded-full p-2 mt-8 justify-between m-auto bg-neutral-950 md:max-w-lg">
+                    <label htmlFor="email" className="sr-only">Enter Email</label>
                     <input
+                        id="email"
                         type="email"
                         placeholder="Enter Your email"
                         className="bg-transparent pl-4 focus:outline-none w-full"
                     />
                     <Button
+                        aria-label="sign up"
                         variant="primary"
                         type="submit"
                         className="whitespace-nowrap px-3 md:px-5"

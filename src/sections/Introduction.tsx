@@ -22,7 +22,7 @@ export default function Introduction() {
     }, [wordIndex]);
 
     return (
-        <section className="py-24 lg:py-40">
+        <section className="py-24 lg:py-40" id="Welcome to Layers">
             <div className="container">
                 <div className="sticky top-20">
                     <div className="flex justify-center">

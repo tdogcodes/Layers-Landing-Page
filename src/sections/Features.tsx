@@ -30,12 +30,12 @@ export default function Features() {
                     <span className="text-lime-400">simplicity</span>
                 </h2>
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">
-                    <FeatureCard
+                    <FeatureCard 
                         title="Real-time Collaboration"
                         description="Work together seamlessly with conflict-free team editing"
                         className="md:col-span-2 lg:col-span-1 group"
                     >
-                        <div className="aspect-video flex items-center justify-center ">
+                        <div className="aspect-video flex items-center justify-center" aria-label="Real-time Collaboration">
                             <Avatar className="z-40">
                                 <Image
                                     src={Avatar1}
@@ -79,7 +79,7 @@ export default function Features() {
                         description="Engage your clients with prototypes that react to user actions"
                         className="md:col-span-2 lg:col-span-1 group"
                     >
-                        <div className="aspect-video flex items-center">
+                        <div className="aspect-video flex items-center" aria-label="Interactive Prototyping">
                             <p className="text-4xl font-extrabold text-white/20 text-center">
                                 We&apos;ve achieved{" "}
                                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative group-hover:text-white/30 duration-500 transition">
@@ -102,7 +102,7 @@ export default function Features() {
                         description="Powerful commands to help you create designs more quickly"
                         className="group md:col-span-2 md:col-start-2 lg:col-span-1 lg:col-start-auto"
                     >
-                        <div className="aspect-video flex items-center justify-center gap-4">
+                        <div className="aspect-video flex items-center justify-center gap-4" aria-label="Quick Keyboard Actions">
                             <Key className="w-28 outline outline-2 outline-offset-4 hover:translate-y-1 outline-transparent group-hover:outline-lime-400 transition-all">
                                 Shift
                             </Key>
@@ -118,6 +118,7 @@ export default function Features() {
                 <div className="mt-8 flex flex-wrap gap-3 justify-center">
                     {features.map((feature) => (
                         <div
+                            aria-label={feature}
                             key={feature}
                             className="bg-neutral-900 border border-white/10 inline-flex px-3 md:px-5
                         hover:scale-105 transition duration-500 py-1.5 md:py-2 rounded-2xl gap-3 items-center group"
