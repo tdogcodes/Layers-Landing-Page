@@ -64,7 +64,7 @@ export default function Hero() {
     return (
         <section
             aria-label="hero"
-            className="py-32 lg:pt-40 overflow-x-clip"
+            className="my-16 lg:pt-40 overflow-x-clip"
             style={{ cursor: `url(${cursorYouImage.src}), auto` }}
             id="home"
         >
